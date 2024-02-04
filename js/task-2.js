@@ -26,22 +26,11 @@ const images = [
 ];
 
 
-// =============================================================
-// const gallery = document.querySelector(".gallery");
-// const imagesList = images
-//   .map((image) => {
-//     const img = new Image();
-//     img.src = image.url;
-//     img.alt = image.alt;
-//     img.style.width = "360px";
-//     img.style.height = "300px";
-//     img.style.objectFit = "cover";
-
-//     const li = document.createElement("li");
-//     li.classList.add("gallery-item");
-//     li.appendChild(img);
-//     return li.outerHTML;
-//   })
-//   .join("");
-
-// gallery.insertAdjacentHTML("beforeend", imagesList);
+const gallery = document.querySelector(".gallery");
+const imgList = images
+  .map(
+    (elem) =>
+      `<li><img src="${elem.url}" alt="${elem.alt}" width=360 height=300></li>`
+  )
+  .join("");
+gallery.innerHTML = `<ul class="gallery">${imgList}</ul>`;
