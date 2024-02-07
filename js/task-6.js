@@ -33,6 +33,7 @@ createButton.addEventListener("click", function () {
   }
 });
 
+
 destroyButton.addEventListener("click", function () {
   destroyBoxes();
 });
