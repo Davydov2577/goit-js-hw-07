@@ -25,12 +25,15 @@ const images = [
   },
 ];
 
-
 const gallery = document.querySelector(".gallery");
 const imgList = images
+
   .map(
     (elem) =>
-      `<li><img src="${elem.url}" alt="${elem.alt}" width=360 height=300></li>`
+      `<li><img src="${elem.url}" alt="${elem.alt}"></li>`
   )
   .join("");
-gallery.innerHTML = `<ul class="gallery">${imgList}</ul>`;
+
+// gallery.innerHTML = `<ul class="gallery">${imgList}</ul>`;
+
+gallery.insertAdjacentHTML("afterbegin", imgList);
